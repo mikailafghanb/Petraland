@@ -9,6 +9,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "String", "BASE_URL", "\"https://maps.googleapis.com\""
     }
     buildTypes {
         release {
@@ -25,7 +26,6 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'com.google.android.gms:play-services-maps:17.0.0'
     implementation 'com.google.maps.android:android-maps-utils:0.4+'
-    implementation 'com.google.firebase:firebase-analytics:17.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     //Firebase
     implementation 'com.google.firebase:firebase-core:17.1.0'
@@ -33,8 +33,15 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:19.0.0'
     implementation 'com.google.firebase:firebase-storage:19.0.0'
     implementation 'com.firebaseui:firebase-ui-database:1.2.0'
+    implementation 'com.google.firebase:firebase-analytics:17.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    //GSON
+    implementation 'com.google.code.gson:gson:2.8.5'
+    //GSON CONVERTER RETROFIT
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
 }
 apply plugin: 'com.google.gms.google-services'

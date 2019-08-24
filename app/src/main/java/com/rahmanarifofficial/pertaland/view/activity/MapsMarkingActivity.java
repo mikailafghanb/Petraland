@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -25,23 +26,34 @@ import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 import com.google.maps.android.SphericalUtil;
 import com.rahmanarifofficial.pertaland.R;
+import com.rahmanarifofficial.pertaland.api.ApiBuilder;
+import com.rahmanarifofficial.pertaland.api.ApiServices;
+import com.rahmanarifofficial.pertaland.model.address.Alamat;
+import com.rahmanarifofficial.pertaland.presenter.InputPresenter;
 import com.rahmanarifofficial.pertaland.util.Globe_Variable;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+import static com.rahmanarifofficial.pertaland.util.Globe_Variable.TAG_APLIKASI;
 
 public class MapsMarkingActivity extends AppCompatActivity implements
         OnMapReadyCallback,
         GoogleMap.OnMapClickListener,
         GoogleMap.OnMapLongClickListener,
         GoogleMap.OnMarkerClickListener,
-        View.OnClickListener {
+        View.OnClickListener,
+        MapsView {
 
     private GoogleMap myMap;
     private Boolean markerClicked;
     private PolygonOptions polygonOptions;
     private Polygon polygon;
-    private List<LatLng> latLngs = new ArrayList<>();
+    private ArrayList<LatLng> latLngs = new ArrayList<>();
+    private String lokasi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +118,9 @@ public class MapsMarkingActivity extends AppCompatActivity implements
     public void onMapLongClick(LatLng latLng) {
         myMap.addMarker(new MarkerOptions().position(latLng).title(latLng.toString()));
         latLngs.add(latLng);
+        if (latLngs.size() > 0) {
+            InputPresenter.getAlamat(latLngs.get(0).latitude + "," + latLngs.get(0).longitude, getString(R.string.google_maps_key), this);
+        }
         markerClicked = false;
     }
 
@@ -132,13 +147,36 @@ public class MapsMarkingActivity extends AppCompatActivity implements
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    @Override
+    public void onResponse(Alamat alamat) {
+        lokasi = alamat.getResults().get(0).getFormattedAddress();
+    }
+
+    @Override
+    public void onFailure(String error) {
+        Log.d(TAG_APLIKASI, error);
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_next:
                 if (latLngs.size() > 2) {
                     double luasArea = SphericalUtil.computeArea(latLngs);
                     startActivity(new Intent(this, InputAssetActivity.class)
-                            .putExtra(Globe_Variable.LUAS_AREA, luasArea));
+                            .putExtra(Globe_Variable.LUAS_AREA, luasArea)
+                            .putExtra(Globe_Variable.LOKASI, lokasi)
+                            .putParcelableArrayListExtra(Globe_Variable.LIST_LAT_LANG, latLngs));
                 } else {
                     Toast.makeText(this, "Tentukan Area Terlebih dahulu", Toast.LENGTH_SHORT).show();
                 }
@@ -147,17 +185,6 @@ public class MapsMarkingActivity extends AppCompatActivity implements
                 myMap.clear();
                 latLngs.clear();
                 break;
-        }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return false;
         }
     }
 }
