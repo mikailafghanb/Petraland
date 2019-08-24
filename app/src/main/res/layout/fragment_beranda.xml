@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".view.fragment.BerandaFragment">
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv_input_asset"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -44,9 +44,9 @@
                 android:textSize="25sp"
                 android:textStyle="bold" />
         </LinearLayout>
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv_analisis_asset"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -83,9 +83,9 @@
                 android:textSize="25sp"
                 android:textStyle="bold" />
         </LinearLayout>
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/cv_publikasi_asset"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -122,6 +122,6 @@
                 android:textSize="25sp"
                 android:textStyle="bold" />
         </LinearLayout>
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

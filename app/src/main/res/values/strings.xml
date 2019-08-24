@@ -9,4 +9,6 @@
     <string name="publikasi_asset_menu">Publikasi Aset</string>
     <string name="tab_beranda">Beranda</string>
     <string name="tab_profil">Profil</string>
+    <string name="title_activity_maps_marking">Map</string>
+    <string name="text_next">Lanjutkan</string>
 </resources>
