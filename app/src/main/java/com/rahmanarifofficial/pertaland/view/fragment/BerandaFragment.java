@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.rahmanarifofficial.pertaland.R;
+import com.rahmanarifofficial.pertaland.view.activity.AnalisisActivity;
 import com.rahmanarifofficial.pertaland.view.activity.MapsMarkingActivity;
 
 /**
@@ -40,6 +41,7 @@ public class BerandaFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), MapsMarkingActivity.class));
                 break;
             case R.id.cv_analisis_asset:
+                startActivity(new Intent(getActivity(), AnalisisActivity.class));
                 break;
             case R.id.cv_publikasi_asset:
                 break;

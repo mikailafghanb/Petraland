@@ -1,7 +1,5 @@
 package com.rahmanarifofficial.pertaland.presenter;
 
-import android.util.Log;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.rahmanarifofficial.pertaland.api.ApiBuilder;
@@ -16,7 +14,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 import static com.rahmanarifofficial.pertaland.util.Globe_Variable.ASET_TREE;
-import static com.rahmanarifofficial.pertaland.util.Globe_Variable.TAG_APLIKASI;
 
 public class InputPresenter {
     private static DatabaseReference asetReference = FirebaseDatabase.getInstance().getReference(ASET_TREE);

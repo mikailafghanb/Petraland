@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -56,6 +55,7 @@ public class InputAssetActivity extends AppCompatActivity implements View.OnClic
 
     @Override
     public void onClick(View v) {
+        String idAset = InputPresenter.getIdAset();
         String nama = etNama.getText().toString();
         String fasilitas = etFasilitas.getText().toString();
         String keterangan = etKeterangan.getText().toString();
@@ -63,8 +63,8 @@ public class InputAssetActivity extends AppCompatActivity implements View.OnClic
         String lokasi = tvLokasi.getText().toString();
         ArrayList<LatLng> latLngs = getIntent().getParcelableArrayListExtra(Globe_Variable.LIST_LAT_LANG);
 
-        Aset aset = new Aset(nama, luasTanah, lokasi, fasilitas, keterangan, latLngs);
-        InputPresenter.simpanAset(InputPresenter.getIdAset(), aset, this);
+        Aset aset = new Aset(idAset, nama, luasTanah, lokasi, fasilitas, keterangan);//, latLngs);
+        InputPresenter.simpanAset(idAset, aset, this);
     }
 
     @Override
