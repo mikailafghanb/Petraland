@@ -1,4 +1,4 @@
-package com.rahmanarifofficial.petraland.view.fragment;
+package com.rahmanarifofficial.pertaland.view.fragment;
 
 
 import android.content.Intent;
@@ -9,8 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.rahmanarifofficial.petraland.R;
-import com.rahmanarifofficial.petraland.view.activity.MapsMarkingActivity;
+import com.rahmanarifofficial.pertaland.R;
+import com.rahmanarifofficial.pertaland.view.activity.MapsMarkingActivity;
 
 /**
  * A simple {@link Fragment} subclass.

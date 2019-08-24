@@ -1,13 +1,13 @@
-package com.rahmanarifofficial.petraland;
+package com.rahmanarifofficial.pertaland;
 
 import com.google.android.material.tabs.TabLayout;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.rahmanarifofficial.petraland.adapter.TabPagerAdapter;
-import com.rahmanarifofficial.petraland.view.fragment.BerandaFragment;
-import com.rahmanarifofficial.petraland.view.fragment.ProfilFragment;
+import com.rahmanarifofficial.pertaland.adapter.TabPagerAdapter;
+import com.rahmanarifofficial.pertaland.view.fragment.BerandaFragment;
+import com.rahmanarifofficial.pertaland.view.fragment.ProfilFragment;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.rahmanarifofficial.petraland;
+package com.rahmanarifofficial.pertaland;
 
 import android.content.Context;
 import androidx.test.InstrumentationRegistry;

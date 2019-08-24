@@ -1,4 +1,4 @@
-package com.rahmanarifofficial.petraland;
+package com.rahmanarifofficial.pertaland;
 
 import org.junit.Test;
 

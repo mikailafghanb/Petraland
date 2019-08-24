@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Petraland</string>
+    <string name="app_name">Pertaland</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -11,4 +11,11 @@
     <string name="tab_profil">Profil</string>
     <string name="title_activity_maps_marking">Map</string>
     <string name="text_next">Lanjutkan</string>
+    <string name="text_luas_tanah">Luas Tanah</string>
+    <string name="text_nama_tanah">Nama Bidang</string>
+    <string name="text_lokasi">Lokasi</string>
+    <string name="text_keterangan">Keterangan</string>
+    <string name="text_content_fasilitas">Fasilitas yang ada</string>
+    <string name="text_content_keterangan">Keterangan lain jika ada</string>
+    <string name="text_simpan">Simpan</string>
 </resources>

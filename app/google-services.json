@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "532084812525",
+    "firebase_url": "https://pertaland.firebaseio.com",
+    "project_id": "pertaland",
+    "storage_bucket": "pertaland.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:532084812525:android:8c90caee9a6520dd",
+        "android_client_info": {
+          "package_name": "com.rahmanarifofficial.pertaland"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "532084812525-mo56v472b4kvorsmpdklldof5d1bm15d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rahmanarifofficial.pertaland",
+            "certificate_hash": "ecb1464651a1af3f85f54ec79b062b3b4ebc7d43"
+          }
+        },
+        {
+          "client_id": "532084812525-e3mahhmguubu0gmc5foa6v88k6gn63ib.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqvr5ZoI9BaKveqjriWfp4Q9iMHmCbpJE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "532084812525-e3mahhmguubu0gmc5foa6v88k6gn63ib.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

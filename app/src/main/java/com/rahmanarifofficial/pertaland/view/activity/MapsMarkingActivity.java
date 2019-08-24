@@ -1,13 +1,18 @@
-package com.rahmanarifofficial.petraland.view.activity;
+package com.rahmanarifofficial.pertaland.view.activity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.FragmentActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -18,7 +23,9 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
-import com.rahmanarifofficial.petraland.R;
+import com.google.maps.android.SphericalUtil;
+import com.rahmanarifofficial.pertaland.R;
+import com.rahmanarifofficial.pertaland.util.Globe_Variable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +34,8 @@ public class MapsMarkingActivity extends AppCompatActivity implements
         OnMapReadyCallback,
         GoogleMap.OnMapClickListener,
         GoogleMap.OnMapLongClickListener,
-        GoogleMap.OnMarkerClickListener {
+        GoogleMap.OnMarkerClickListener,
+        View.OnClickListener {
 
     private GoogleMap myMap;
     private Boolean markerClicked;
@@ -45,6 +53,11 @@ public class MapsMarkingActivity extends AppCompatActivity implements
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+        //Bind View
+        Button btnNext = findViewById(R.id.btn_next);
+        ImageButton btnDelete = findViewById(R.id.btn_delete_marker);
+        btnNext.setOnClickListener(this);
+        btnDelete.setOnClickListener(this);
     }
 
 
@@ -79,10 +92,7 @@ public class MapsMarkingActivity extends AppCompatActivity implements
         myMap.setOnMarkerClickListener(this);
 
         markerClicked = false;
-//        // Add a marker in Sydney and move the camera
-//        LatLng sydney = new LatLng(-34, 151);
-//        myMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-//        myMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        myMap.moveCamera(CameraUpdateFactory.newLatLng(new LatLng(-6, 106)));
     }
 
     @Override
@@ -119,5 +129,35 @@ public class MapsMarkingActivity extends AppCompatActivity implements
             markerClicked = true;
         }
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_next:
+                if (latLngs.size() > 2) {
+                    double luasArea = SphericalUtil.computeArea(latLngs);
+                    startActivity(new Intent(this, InputAssetActivity.class)
+                            .putExtra(Globe_Variable.LUAS_AREA, luasArea));
+                } else {
+                    Toast.makeText(this, "Tentukan Area Terlebih dahulu", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.btn_delete_marker:
+                myMap.clear();
+                latLngs.clear();
+                break;
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return false;
+        }
     }
 }

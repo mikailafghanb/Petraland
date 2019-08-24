@@ -1,4 +1,4 @@
-package com.rahmanarifofficial.petraland.adapter;
+package com.rahmanarifofficial.pertaland.adapter;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
