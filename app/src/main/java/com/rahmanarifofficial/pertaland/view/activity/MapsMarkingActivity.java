@@ -26,17 +26,11 @@ import com.google.android.gms.maps.model.Polygon;
 import com.google.android.gms.maps.model.PolygonOptions;
 import com.google.maps.android.SphericalUtil;
 import com.rahmanarifofficial.pertaland.R;
-import com.rahmanarifofficial.pertaland.api.ApiBuilder;
-import com.rahmanarifofficial.pertaland.api.ApiServices;
 import com.rahmanarifofficial.pertaland.model.address.Alamat;
 import com.rahmanarifofficial.pertaland.presenter.InputPresenter;
 import com.rahmanarifofficial.pertaland.util.Globe_Variable;
 
 import java.util.ArrayList;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 import static com.rahmanarifofficial.pertaland.util.Globe_Variable.TAG_APLIKASI;
 

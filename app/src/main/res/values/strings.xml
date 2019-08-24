@@ -20,4 +20,8 @@
     <string name="text_simpan">Simpan</string>
     <string name="text_fasilitas">Fasilitas</string>
     <string name="text_lakukan_analisis">Lakukan Analisis</string>
+    <string name="text_publish">Publish</string>
+    <string name="text_detail_aset">Detail Aset</string>
+    <string name="text_rekomendasi">Rekomendasi</string>
+    <string name="text_ok">OK</string>
 </resources>

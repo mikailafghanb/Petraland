@@ -21,7 +21,7 @@ import java.util.Collections;
 
 import static com.rahmanarifofficial.pertaland.util.Globe_Variable.TAG_APLIKASI;
 
-public class AnalisisActivity extends AppCompatActivity implements AnalisisView {
+public class PublikasiAsetActivity extends AppCompatActivity implements AnalisisView {
 
     private AsetListAdapter adapter;
     private ArrayList<Aset> asets;
@@ -31,13 +31,13 @@ public class AnalisisActivity extends AppCompatActivity implements AnalisisView 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_analisis);
+        setContentView(R.layout.activity_publikasi_aset);
 
-        getSupportActionBar().setTitle(getString(R.string.analisis_asset_menu));
+        getSupportActionBar().setTitle(getString(R.string.publikasi_asset_menu));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        pbLoadingAset = findViewById(R.id.pb_loading_aset);
-        rvAset = findViewById(R.id.rv_list_aset);
+        pbLoadingAset = findViewById(R.id.pb_loading_publikasi_aset);
+        rvAset = findViewById(R.id.rv_list_publikasi_aset);
         rvAset.setHasFixedSize(true);
         rvAset.setLayoutManager(new LinearLayoutManager(this));
 
@@ -59,7 +59,7 @@ public class AnalisisActivity extends AppCompatActivity implements AnalisisView 
     public void showAsets(Aset aset) {
         asets.add(aset);
         Collections.reverse(asets);
-        adapter = new AsetListAdapter(this, asets, Globe_Variable.ANALISIS_CLASS);
+        adapter = new AsetListAdapter(this, asets, Globe_Variable.PUBLIKASI_CLASS);
         rvAset.setAdapter(adapter);
     }
 

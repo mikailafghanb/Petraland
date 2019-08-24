@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.rahmanarifofficial.pertaland.R;
 import com.rahmanarifofficial.pertaland.view.activity.AnalisisActivity;
 import com.rahmanarifofficial.pertaland.view.activity.MapsMarkingActivity;
+import com.rahmanarifofficial.pertaland.view.activity.PublikasiAsetActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -44,6 +45,7 @@ public class BerandaFragment extends Fragment implements View.OnClickListener {
                 startActivity(new Intent(getActivity(), AnalisisActivity.class));
                 break;
             case R.id.cv_publikasi_asset:
+                startActivity(new Intent(getActivity(), PublikasiAsetActivity.class));
                 break;
         }
     }

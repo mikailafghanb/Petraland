@@ -9,8 +9,17 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.rahmanarifofficial.pertaland.api.ApiBuilder;
+import com.rahmanarifofficial.pertaland.api.ApiServices;
 import com.rahmanarifofficial.pertaland.model.Aset;
+import com.rahmanarifofficial.pertaland.model.Rekomendasi;
+import com.rahmanarifofficial.pertaland.util.Globe_Variable;
 import com.rahmanarifofficial.pertaland.view.activity.AnalisisView;
+import com.rahmanarifofficial.pertaland.view.activity.RekomendasiView;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 import static com.rahmanarifofficial.pertaland.util.Globe_Variable.ASET_TREE;
 
@@ -61,6 +70,33 @@ public class AnalisisPresenter {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 view.failedShowingAsets(databaseError.getMessage());
+                view.hideLoading();
+            }
+        });
+    }
+
+    public static void setRekomendasiAset(String idAset, String rekomendasi,final RekomendasiView view) {
+        view.showLoading();
+        asetReference.child(idAset).child(Globe_Variable.REKOMENDASI).setValue(rekomendasi);
+        view.hideLoading();
+    }
+
+    public static void getRekomendasi(final RekomendasiView view) {
+        view.showLoading();
+        ApiServices apiServices = ApiBuilder.getRekomendasiClient().create(ApiServices.class);
+        Call<Rekomendasi> call = apiServices.getRekomendasi();
+        call.enqueue(new Callback<Rekomendasi>() {
+            @Override
+            public void onResponse(Call<Rekomendasi> call, Response<Rekomendasi> response) {
+                if (response.body() != null) {
+                    view.showRekomendasi(response.body());
+                    view.hideLoading();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Rekomendasi> call, Throwable t) {
+                view.failedShowingRekomendasi(t.getMessage());
                 view.hideLoading();
             }
         });

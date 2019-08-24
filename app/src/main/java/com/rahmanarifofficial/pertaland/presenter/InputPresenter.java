@@ -29,7 +29,7 @@ public class InputPresenter {
     }
 
     public static void getAlamat(String latLng, String key, final MapsView view) {
-        ApiServices apiServices = ApiBuilder.getClient().create(ApiServices.class);
+        ApiServices apiServices = ApiBuilder.getMapsClient().create(ApiServices.class);
         Call<Alamat> call = apiServices.getAlamat(latLng, key);
         call.enqueue(new Callback<Alamat>() {
             @Override

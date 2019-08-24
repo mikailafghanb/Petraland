@@ -10,6 +10,7 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildConfigField "String", "BASE_URL", "\"https://maps.googleapis.com\""
+        buildConfigField "String", "BASE_API_URL", "\"http://ec2-54-169-160-157.ap-southeast-1.compute.amazonaws.com:7777/\""
     }
     buildTypes {
         release {

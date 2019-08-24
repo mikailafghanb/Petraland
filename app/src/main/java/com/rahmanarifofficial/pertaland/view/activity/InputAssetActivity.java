@@ -3,6 +3,7 @@ package com.rahmanarifofficial.pertaland.view.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,7 +33,7 @@ public class InputAssetActivity extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_asset);
         getSupportActionBar().setTitle(getString(R.string.input_asset_menu));
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initViews();
         setViews();
     }
@@ -61,9 +62,10 @@ public class InputAssetActivity extends AppCompatActivity implements View.OnClic
         String keterangan = etKeterangan.getText().toString();
         double luasTanah = getIntent().getDoubleExtra(Globe_Variable.LUAS_AREA, 0);
         String lokasi = tvLokasi.getText().toString();
+        String rekomendasi = "";
         ArrayList<LatLng> latLngs = getIntent().getParcelableArrayListExtra(Globe_Variable.LIST_LAT_LANG);
 
-        Aset aset = new Aset(idAset, nama, luasTanah, lokasi, fasilitas, keterangan);//, latLngs);
+        Aset aset = new Aset(idAset, nama, luasTanah, lokasi, fasilitas, keterangan, rekomendasi);//, latLngs);
         InputPresenter.simpanAset(idAset, aset, this);
     }
 
@@ -85,4 +87,16 @@ public class InputAssetActivity extends AppCompatActivity implements View.OnClic
         startActivity(new Intent(this, MainActivity.class));
         finish();
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return false;
+        }
+    }
+
 }

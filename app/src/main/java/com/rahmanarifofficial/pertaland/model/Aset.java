@@ -7,14 +7,15 @@ public class Aset {
     private String lokasi;
     private String fasilitas;
     private String keterangan;
+    private String rekomendasi;
 //    private List<LatLng> latLangs;
 
     public Aset() {
     }
 
-    public Aset(String idAset, String namaBidang, double luasBidang, String lokasi, String fasilitas, String keterangan
+    public Aset(String idAset, String namaBidang, double luasBidang, String lokasi, String fasilitas, String keterangan,
 //            , List<LatLng> latLangs
-    ) {
+                String rekomendasi) {
         this.idAset = idAset;
         this.namaBidang = namaBidang;
         this.luasBidang = luasBidang;
@@ -22,6 +23,7 @@ public class Aset {
         this.fasilitas = fasilitas;
         this.keterangan = keterangan;
 //        this.latLangs = latLangs;
+        this.rekomendasi = rekomendasi;
     }
 
     public String getIdAset() {
@@ -48,7 +50,11 @@ public class Aset {
         return keterangan;
     }
 
-//    public List<LatLng> getLatLangs() {
+    public String getRekomendasi() {
+        return rekomendasi;
+    }
+
+    //    public List<LatLng> getLatLangs() {
 //        return latLangs;
 //    }
 
