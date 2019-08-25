@@ -24,4 +24,12 @@
     <string name="text_detail_aset">Detail Aset</string>
     <string name="text_rekomendasi">Rekomendasi</string>
     <string name="text_ok">OK</string>
+    <string name="nama_picker">Dino Keylas</string>
+    <string name="example_gmail_com">dinokeylas@gmail.com</string>
+    <string name="detail_profil">Detail Profil</string>
+    <string name="edit_profil">Edit Profil</string>
+    <string name="keluar">Keluar</string>
+    <string name="email">Email</string>
+    <string name="kata_sandi">Kata Sandi</string>
+    <string name="login">Login</string>
 </resources>

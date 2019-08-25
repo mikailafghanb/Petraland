@@ -27,6 +27,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/text_nama_tanah"
+                    android:textStyle="bold"
                     android:textSize="16sp" />
 
                 <TextView
@@ -49,6 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/text_luas_tanah"
+                    android:textStyle="bold"
                     android:textSize="16sp" />
 
                 <TextView
@@ -64,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:text="@string/text_lokasi"
+                android:textStyle="bold"
                 android:textSize="16sp" />
 
             <TextView
@@ -78,6 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:text="@string/text_fasilitas"
+                android:textStyle="bold"
                 android:textSize="16sp" />
 
             <TextView
@@ -92,6 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:text="@string/text_keterangan"
+                android:textStyle="bold"
                 android:textSize="16sp" />
 
             <TextView

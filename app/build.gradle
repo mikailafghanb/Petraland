@@ -35,6 +35,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:19.0.0'
     implementation 'com.firebaseui:firebase-ui-database:1.2.0'
     implementation 'com.google.firebase:firebase-analytics:17.1.0'
+    implementation 'com.kishan.askpermission:askpermission:1.0.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
@@ -44,5 +45,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     //GSON CONVERTER RETROFIT
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
 }
 apply plugin: 'com.google.gms.google-services'
